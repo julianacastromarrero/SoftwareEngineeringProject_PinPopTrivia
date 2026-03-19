@@ -1,0 +1,26 @@
+{
+  "name": "softwareengineeringproject_pinpoptrivia",
+  "version": "1.0.0",
+  "description": "Source code for a city trivia game focusing on a select few cities and trivia of certain media (movies, tv series, and books) that take place there or were filmed there.\r <img width=\"1350\" height=\"566\" alt=\"image\" src=\"https://github.com/user-attachments/assets/f473ec90-61bd-4de5-9c9b-f68ad40b810a\" />",
+  "homepage": "https://github.com/julianacastromarrero/SoftwareEngineeringProject_PinPopTrivia#readme",
+  "bugs": {
+    "url": "https://github.com/julianacastromarrero/SoftwareEngineeringProject_PinPopTrivia/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julianacastromarrero/SoftwareEngineeringProject_PinPopTrivia.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.20.0"
+  }
+}
