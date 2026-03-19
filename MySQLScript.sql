@@ -1,7 +1,7 @@
 CREATE DATABASE pinpop;
 USE pinpop;
 
-CREATE TABLE admin (
+CREATE TABLE IF NOT EXISTS admin (
 	admin_id	INT AUTO_INCREMENT,
 	full_name	VARCHAR(50) NOT NULL,
     role		VARCHAR(30) NOT NULL DEFAULT 'Admin', 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS location (
 CREATE TABLE IF NOT EXISTS questions (
 	q_id		INT NOT NULL AUTO_INCREMENT,
     question	VARCHAR(500) NOT NULL,
-    media_id	INT NOT NULL,
+    media_id	INT,
     location_id	INT NOT NULL,
     answer      ENUM('A','B','C','D') NOT NULL,
     option_a    VARCHAR(100) NOT NULL,
@@ -120,3 +120,51 @@ CREATE TABLE IF NOT EXISTS contact (
     FOREIGN KEY (admin_review) REFERENCES admin(admin_id) ON DELETE SET NULL,
     UNIQUE KEY weekly_suggestion_player (player_id, week_start)
 );
+
+
+-- PRELIM DATA ISNERTION
+INSERT INTO admin(full_name, role, email, password) VALUES 
+	('Juliana Castro', 'Back end developer', 'jcastro8@trinity.edu', 'pwd'),
+    ('Natalie Hudson', 'Full stack developer', 'nhudson@trinity.edu', 'pwd'),
+    ('Al Stubblefield','Front end developer','astubble@trinity.edu', 'pwd');
+
+INSERT INTO location(city_name, country, region) VALUES
+	('New York', 'USA', 'North America'),
+    ('Amsterdam', 'Netherlands', 'Europe'), --
+    ('Wellington', 'New Zealand', 'Oceania'), --
+    ('London', 'United Kingdom', 'Europe'), --
+    ('Tokyo', 'Japan', 'Asia'), --
+    ('Tehran', 'Iran', 'Middle East'), --
+    ('Buenos Aires', 'Argentina', 'South America'), --
+    ('Rio de Janeiro', 'Brazil', 'South America'), --
+    ('Mexico City', 'Mexico', 'North America'),
+    ('Dubai','UAE','Middle East'),
+    ('Paris','France','Europe'),
+    ('Seoul','South Korea', 'Asia'),
+    ('Sydney', 'Australia','Oceania'),
+    ('Seattle','USA','North America'),
+    ('Monaco', 'Monaco', 'Europe'),
+    ('Kigali', 'Rwanda', 'Africa'),
+    ('Johannesburg', 'South Africa', 'Africa'), -- Hotel Rwanda + Avengers Age of Ultron
+    ('Cape Town', 'South Africa', 'Africa'), -- Mad Max
+    ('Los Angeles', 'USA', 'North America'),
+    ('Chicago', 'USA', 'North America'); -- The Bear
+    
+INSERT INTO media(title, direct_author, media_type) VALUES 
+    ('Persepolis', 'Marjane Satrapi', 'Book'), -- Tehran
+    ('XOXO Kitty', 'Jenny Han', 'TV Show'), -- Seoul
+    ('Lost in Translation', 'Sofia Coppola', 'Movie'), -- Tokyo
+    ('Parasite', 'Bong Joon Ho', 'Movie'), -- Seoul
+    ('Your Name', 'Makoto Shinkai', 'Movie'), -- Tokyo
+    ('The Diary of Anne Frank', 'Anne Frank', 'Book'), -- Amsterdam
+    ('The Fault in our Stars', 'John Green', 'Book'), -- Amsterdam
+    ('Girl with a Pearl Earing', 'Peter WEbber', 'Movie'), -- Amsterdam
+    ('Lord of the Rings', 'Peter Jackson', 'Movie'), -- Wellington
+    ('Bridgerton', 'Julia Quinn', 'TV Show'), -- London
+    ('Fleabag', 'Phoebe Waller-Bridge', 'TV Show'), -- London
+    ('Rio', 'Carlos Saldanha', 'Movie'),
+    ('Twilight - Breaking Dawn Part 1', 'Bill Condon', 'Movie'), -- Rio de Janeiro
+    ('Roma', 'Alfonso Cuaron', 'Movie'); -- CDMX
+    
+
+
