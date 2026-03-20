@@ -92,10 +92,10 @@ button {
     cursor: pointer;
 }
 
-form-container {
+.form-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #D1b585;
     border-radius: 5px;
 }
