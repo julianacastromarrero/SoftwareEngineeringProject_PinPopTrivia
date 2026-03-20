@@ -1,0 +1,19 @@
+body {
+    background-color: beige;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #9b2b2b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
